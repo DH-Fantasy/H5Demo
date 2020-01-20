@@ -98,28 +98,17 @@
 			}
 		}
 
-		     function openAction(){
-      // alert('未知');
-//       let link = "haoshua://com.shijiu.www",
-//     fallback = "itms-apps://itunes.apple.com/cn/app/" + 1492856061;
-// // 尝试呼起 App
-// location.href = link;
-// // 3s 后未能呼起则跳转 App Store
-// setTimeout(() => location.href = fallback, 3000);
+		function openAction(){
+			// let link = "haoshua://com.shijiu.www",
+			let link = "zhihu://answers/975931934?utm_source=mobile_smart_banner",
+			fallback = "itms-apps://itunes.apple.com/cn/app/" + 1492856061;
+// 尝试呼起 App
+location.href = link;
+// 3s 后未能呼起则跳转 App Store
+setTimeout(() => location.href = fallback, 3000);
+}
 
-      var ifr = document.createElement("iframe");
-      /***打开app的协议，有ios同事提供***/
-      ifr.src = "haoshua://com.shijiu.www"; 
-      ifr.style.display = "none"; 
-      document.body.appendChild(ifr);
-      window.setTimeout(function(){
-       document.body.removeChild(ifr);
-       /***下载app的地址***/
-       window.location.href = "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=1492856061"; 
-      },2000)
-     }
-
-		function testAction(){
+function testAction(){
     	// var obj = {"name":"xiao","age":12};
     	// alert(obj.name);
     	switch (type){
