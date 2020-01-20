@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+
+<head>
+	<title>JS交互OC</title>
+	<meta charset="utf-8">
+</head>
+
+<!--   CSS语法-->
+<style type='text/css'>
+	img{
+		cursor:pointer;
+	}
+</style>
+
+<body>
+
+	<p style="text-align:center"> <button id="btn1" type = "button" onclick = "goHomeFun()" > 再去逛逛  </button> </p>
+
+	<p style="text-align:center"> <button id="btn2" type = "button" onclick = "shareFun()"> 要求好友助力 </button> </p>
+
+	<p style="text-align:center"> <button id="btn2" type = "button" onclick = "testAction()"> 获取当前类型  </button> </p>
+
+	<!--        JS语法-->
+	<script type = "text/javascript">
+
+		let type = -1;
+
+		window.onload = function(){
+			type = this.getEnvironmentType();
+		}
+
+		function goHomeFun()
+		{
+			switch (type){
+				case 1 : {
+					window.webkit.messageHandlers.homePage.postMessage({});
+				}
+				break;
+				case 2 : {
+					alert('食九Android');
+				}
+				break;
+				case 3 : {
+					alert('微信');
+				}
+				break;
+				case -1 : {
+					alert('未知');
+				}
+			}
+			
+		}
+
+		function shareFun()
+		{
+			switch (type){
+				case 1 : {
+					window.webkit.messageHandlers.share.postMessage({"title":"分享的标题","desc":"分享的描述","thumUrl":"http://static.haoshua.net/af4fc9b1-d3d5-4b77-7b02-dcf7136ca352-31.png","url":"https://as-vip.missfresh.cn/frontend/h5-1-castor-v1-activity/order-cash.html?masterId=85690053"});
+				}
+				break;
+				case 2 : {
+					alert('食九Android');
+				}
+				break;
+				case 3 : {
+					alert('微信');
+				}
+				break;
+				case -1 : {
+					alert('未知');
+				}
+			}
+		}
+
+		function getEnvironmentType() {
+
+			let ua = window.navigator.userAgent.toLowerCase();
+
+			if(ua.indexOf('shijiuforios') > -1){
+				// alert('食九iOS')
+				return 1;
+			}else if(ua.indexOf('shijiuforandroid') > -1){
+				// alert('食九Android')
+				return 2;
+			}else if(ua.indexOf('micromessenger') > -1){
+				// alert("微信");
+				return 3;
+			}else{
+				// alert('未知')
+				return -1;
+			}
+		}
+
+		function testAction(){
+    	// var obj = {"name":"xiao","age":12};
+    	// alert(obj.name);
+    	switch (type){
+    		case 1 : {
+    			alert('食九iOS');
+    		}
+    		break;
+    		case 2 : {
+    			alert('食九Android');
+    		}
+    		break;
+    		case 3 : {
+    			alert('微信');
+    		}
+    		break;
+    		case -1 : {
+    			alert('未知');
+    		}
+    	}
+    }
+    
+</script>
+
+</body>
+
+</html>
