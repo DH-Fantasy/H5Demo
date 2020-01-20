@@ -21,6 +21,8 @@
 
 	<p style="text-align:center"> <button id="btn2" type = "button" onclick = "testAction()"> 获取当前类型  </button> </p>
 
+	<p style="text-align:center"> <button id="btn2" type = "button" onclick = "openAction()"> 打开App  </button> </p>
+
 	<!--        JS语法-->
 	<script type = "text/javascript">
 
@@ -111,6 +113,19 @@
     		case -1 : {
     			alert('未知');
     		}
+    	}
+
+    	function openAction(){
+    		var ifr = document.createElement("iframe");
+    		/***打开app的协议，有ios同事提供***/
+    		ifr.src = "haoshua://com.shijiu.www"; 
+    		ifr.style.display = "none"; 
+    		document.body.appendChild(ifr);
+    		window.setTimeout(function(){
+    			document.body.removeChild(ifr);
+    			/***下载app的地址***/
+    			window.location.href = "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=1492856061"; 
+    		},2000)
     	}
     }
     
