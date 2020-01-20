@@ -30,6 +30,10 @@
 
 		window.onload = function(){
 			type = this.getEnvironmentType();
+			var script = document.createElement('meta');
+    script.name = 'viewport';
+    script.content= 'width=device-width';
+    document.getElementsByTagName('head')[0].appendChild(script);
 		}
 
 		function goHomeFun()
