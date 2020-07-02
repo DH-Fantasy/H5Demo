@@ -23,12 +23,11 @@
 	  <p>测试文字<br>测试文字</p>
 	</div>
 
+    <a href="sinaweibo://wbdiversion?username=gh_368d266558ad&path=pages%2ffind%2ffind">从微博打开小程序</a>
 
-	<p style="text-align:center"> <button id="btn1" type = "button" onclick = "goHomeFun()" > 再去逛逛  </button> </p>
+	<p style="text-align:center"> <button id="btn1" type = "button" onclick = "goHomeFun()" > homePage  </button> </p>
 
-	<p style="text-align:center"> <button id="btn2" type = "button" onclick = "shareFun()"> 要求好友助力 </button> </p>
-
-	<p style="text-align:center"> <button id="btn2" type = "button" onclick = "testAction()"> 获取当前类型  </button> </p>
+	<p style="text-align:center"> <button id="btn2" type = "button" onclick = "shareFun()"> share </button> </p>
 
 	<p style="text-align:center"> <button id="btn2" type = "button" onclick = "openAction()"> 打开App  </button> </p>
 
@@ -121,28 +120,6 @@ location.href = link;
 // 3s 后未能呼起则跳转 App Store
 setTimeout(() => location.href = fallback, 3000);
 }
-
-function testAction(){
-    	// var obj = {"name":"xiao","age":12};
-    	// alert(obj.name);
-    	switch (type){
-    		case 1 : {
-    			alert('食九iOS');
-    		}
-    		break;
-    		case 2 : {
-    			alert('食九Android');
-    		}
-    		break;
-    		case 3 : {
-    			alert('微信');
-    		}
-    		break;
-    		case -1 : {
-    			alert('未知');
-    		}
-    	}
-    }
 
     function screenshots(){
     	new html2canvas(document.getElementById('qianduanwz'), {
