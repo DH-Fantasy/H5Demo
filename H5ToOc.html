@@ -8,7 +8,7 @@
 
 <body>
 
-	<a style="text-align:center" href="sinaweibo://wbdiversion?username=gh_368d266558ad&path=pages%2ffind%2ffind">从微博打开小程序</a>
+	<a href="sinaweibo://wbdiversion?username=gh_368d266558ad&path=pages%2ffind%2ffind">从微博打开小程序</a>
 
 	<p style="text-align:center"> <button onclick = "login()" > login  </button> </p>
 
@@ -53,7 +53,7 @@
 			}
 		}
 
-		function shareFun(){
+		function share(){
 			switch (type){
 				case 1 : {
 					window.webkit.messageHandlers.share.postMessage({"title":"分享的标题","desc":"分享的描述","thumUrl":"http://static.haoshua.net/af4fc9b1-d3d5-4b77-7b02-dcf7136ca352-31.png","url":"https://as-vip.missfresh.cn/frontend/h5-1-castor-v1-activity/order-cash.html?masterId=85690053"});
