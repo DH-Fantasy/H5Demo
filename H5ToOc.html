@@ -24,6 +24,8 @@
 
 	<p style="text-align:center"> <button onclick = "openApp()"> 打开App  </button> </p>
 
+	<p style="text-align:center"> <button onclick = "testEmptyFun()"> 测试函数为空  </button> </p>
+
 	<!--        JS语法-->
 	<script type = "text/javascript">
 
@@ -187,6 +189,10 @@
 			location.href = link;
 			// 3s 后未能呼起则跳转 App Store
 			setTimeout(() => location.href = fallback, 3000);
+		}
+
+		function testEmptyFun(){
+			window.webkit.messageHandlers.testEmptyFun.postMessage({"shop_user_id":2});
 		}
 	</script>
 
